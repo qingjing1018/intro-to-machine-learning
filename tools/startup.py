@@ -25,6 +25,8 @@ try:
 except:
     print "you should install sklearn before continuing"
 
+
+#%%
 print
 print "downloading the Enron dataset (this may take a while)"
 print "to check on progress, you can cd up one level, then execute <ls -lthr>"
@@ -35,6 +37,8 @@ url = "https://www.cs.cmu.edu/~./enron/enron_mail_20150507.tgz"
 urllib.urlretrieve(url, filename="../enron_mail_20150507.tgz") 
 print "download complete!"
 
+
+#%%
 
 print
 print "unzipping Enron dataset (this may take a while)"
