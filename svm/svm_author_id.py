@@ -108,3 +108,36 @@ for c in c_value:
 
     print "model accuracy is :", accuracy 
 
+#%%%%
+# C = 10000 gives the best training accuracy 
+# Use the full training set to train rbf model with C = 10000
+
+c = 10000.0
+
+features_train, features_test, labels_train, labels_test = preprocess()
+
+clf = SVC(C = c, kernel = 'rbf')
+t0 = time()
+clf.fit(features_train, labels_train)
+    
+print "C = ", c
+print "training time :", round(time()-t0, 3), "s"
+
+t1 = time()
+
+pred = clf.predict(features_test)
+
+print "prediction time:", round(time()-t1, 3), "s"
+
+accuracy = accuracy_score(pred, labels_test)
+
+print "model accuracy is :", accuracy 
+
+
+
+
+
+
+
+
+
