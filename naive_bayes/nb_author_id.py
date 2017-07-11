@@ -22,10 +22,19 @@ from email_preprocess import preprocess
 features_train, features_test, labels_train, labels_test = preprocess()
 
 
+<<<<<<< HEAD
 #%%
 
+||||||| merged common ancestors
+
+
+=======
+
+#%%
+>>>>>>> be4ea430ca719714931a7386328fd267baceeb92
 #########################################################
 ### your code goes here ###
+<<<<<<< HEAD
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
@@ -35,8 +44,32 @@ clf = GaussianNB()
 clf.fit(features_train, labels_train)
 
 pred = clf.predict(features_test)
+||||||| merged common ancestors
+=======
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score
+
+clf = GaussianNB()
+
+t0 = time()
+clf.fit(features_train, labels_train)
+
+print "training time:", round(time()-t0, 3), "s"
+
+t1 = time()
+pred = clf.predict(features_test)
+
+print "prediction time:", round(time()-t1, 3), "s"
 
 accuracy = accuracy_score(labels_test, pred)
+>>>>>>> be4ea430ca719714931a7386328fd267baceeb92
+
+<<<<<<< HEAD
+accuracy = accuracy_score(labels_test, pred)
+||||||| merged common ancestors
+=======
+print accuracy
+>>>>>>> be4ea430ca719714931a7386328fd267baceeb92
 
 print accuracy
 #########################################################
