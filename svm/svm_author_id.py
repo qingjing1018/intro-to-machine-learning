@@ -87,7 +87,24 @@ accuracy = accuracy_score(pred, labels_test)
 print "model accuracy is :", accuracy 
 
 
+#%%%%
+c_value = [10.0, 100.0, 1000.0, 10000.0]
 
+for c in c_value:
+    clf = SVC(C = c, kernel = 'rbf')
+    t0 = time()
+    clf.fit(features_train, labels_train)
+    
+    print "C = ", c
+    print "training time :", round(time()-t0, 3), "s"
 
+    t1 = time()
 
+    pred = clf.predict(features_test)
+
+    print "prediction time:", round(time()-t1, 3), "s"
+
+    accuracy = accuracy_score(pred, labels_test)
+
+    print "model accuracy is :", accuracy 
 
