@@ -133,6 +133,30 @@ accuracy = accuracy_score(pred, labels_test)
 
 print "model accuracy is :", accuracy 
 
+#%%%%
+# Extracting predictions from an SVM
+# Using 1% of the training data 
+
+features_train = features_train[:len(features_train)/100] 
+labels_train = labels_train[:len(labels_train)/100]
+
+c = 10000.0
+clf = SVC(C = c, kernel = 'rbf')
+
+clf.fit(features_train, labels_train)
+
+pred = clf.predict(features_test)
+
+idx = [10, 26, 50]
+
+for num in idx: 
+    ans = pred[num] 
+    if ans == 1:
+        author = "Chris"
+    elif ans == 0: 
+        author = "Sara" 
+    print "The %s th email is from %s" %(str(num), author)     
+        
 
 
 
