@@ -157,6 +157,21 @@ for num in idx:
         author = "Sara" 
     print "The %s th email is from %s" %(str(num), author)     
         
+#%%%%%
+# Find the number of emails that are predicted to be in the "Chris" class (labeled as 1)
+# Use full training set
+# Method: sum all predictions (Chris = 1, Sara = 0)
+
+features_train, features_test, labels_train, labels_test = preprocess()
+
+c = 10000.0
+clf = SVC(C = c, kernel = 'rbf')
+
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+
+pred_chris = sum(pred)
+print pred_chris
 
 
 
