@@ -21,5 +21,19 @@ enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r")
 
 #%%%
 # Number of data points (keys) in the data set 
-
 print len(enron_data)
+
+# Number of features 
+print len(enron_data["SKILLING JEFFREY K"])
+
+# Number of POI in the dataset 
+poi_num = 0
+
+for key in enron_data.keys():
+    if enron_data[key]["poi"] == 1:
+        poi_num += 1
+
+print poi_num
+        
+#%%%%
+        
