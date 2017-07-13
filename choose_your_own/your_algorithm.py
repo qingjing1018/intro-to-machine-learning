@@ -69,9 +69,25 @@ print "AdaBoost accuracy: ", accuracy_ada
 print "Random forest accuracy: ", accuracy_rdf
 
 #%%%%
-
+plt.figure(1)
 try:
     prettyPicture(clf_knn, features_test, labels_test)
     # prettyPicture(clf_rdf, features_test, labels_test)
 except NameError:
     pass
+
+
+plt.figure(2)
+try:
+    prettyPicture(clf_ada, features_test, labels_test)
+    # prettyPicture(clf_rdf, features_test, labels_test)
+except NameError:
+    pass
+
+plt.figure(3)
+try:
+    prettyPicture(clf_rdf, features_test, labels_test)
+    # prettyPicture(clf_rdf, features_test, labels_test)
+except NameError:
+    pass
+
