@@ -36,4 +36,18 @@ for key in enron_data.keys():
 print poi_num
         
 #%%%%
+
+# Like any dict of dicts, individual people/features can be accessed like so:
+# enron_data["LASTNAME FIRSTNAME"]["feature_name"] 
+# or
+# enron_data["LASTNAME FIRSTNAME MIDDLEINITIAL"]["feature_name"]       
         
+# What is the total value of the stock belonging to James Prentice?
+print enron_data["PRENTICE JAMES"]["total_stock_value"]   
+
+# How many email messages do we have from Wesley Colwell to persons of interest?    
+print enron_data["COLWELL WESLEY"]["from_this_person_to_poi"]
+
+# What’s the value of stock options exercised by Jeffrey K Skilling?
+
+print enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
