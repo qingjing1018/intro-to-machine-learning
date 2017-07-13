@@ -33,7 +33,7 @@ plt.show()
 # KNN
 from sklearn.neighbors import KNeighborsClassifier
 
-clf_knn = KNeighborsClassifier()
+clf_knn = KNeighborsClassifier(n_neighbors = 4)
 
 clf_knn = clf_knn.fit(features_train, labels_train)
 
