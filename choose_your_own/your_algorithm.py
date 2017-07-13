@@ -3,9 +3,10 @@
 import matplotlib.pyplot as plt
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
+from sklearn.metrics import accuracy_score
+from time import time
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
-
 
 ### the training data (features_train, labels_train) have both "fast" and "slow"
 ### points mixed together--separate them so we can give them different colors
@@ -27,18 +28,50 @@ plt.ylabel("grade")
 plt.show()
 ################################################################################
 
+#%%%
 
-### your code here!  name your classifier object clf if you want the 
-### visualization code (prettyPicture) to show you the decision boundary
+# KNN
+from sklearn.neighbors import KNeighborsClassifier
+
+clf_knn = KNeighborsClassifier()
+
+clf_knn = clf_knn.fit(features_train, labels_train)
+
+pred_knn = clf_knn.predict(features_test)
+
+accuracy_knn = accuracy_score(pred_knn, labels_test)
+
+# ADAboost
+from sklearn.ensemble import AdaBoostClassifier
+
+clf_ada = AdaBoostClassifier()
+
+clf_ada = clf_ada.fit(features_train, labels_train)
+
+pred_ada = clf_ada.predict(features_test)
+
+accuracy_ada = accuracy_score(pred_ada, labels_test)
+ 
+
+# RandomForest 
+from sklearn.ensemble import RandomForestClassifier
+
+clf_rdf = RandomForestClassifier()
+clf_rdf = clf_rdf.fit(features_train, labels_train)
+
+pred_rdf = clf_rdf.predict(features_test)
+
+accuracy_rdf = accuracy_score(pred_rdf, labels_test)
 
 
+print "KNN model accuracy: ", accuracy_knn
+print "AdaBoost accuracy: ", accuracy_ada
+print "Random forest accuracy: ", accuracy_rdf
 
-
-
-
-
+#%%%%
 
 try:
-    prettyPicture(clf, features_test, labels_test)
+    prettyPicture(clf_knn, features_test, labels_test)
+    # prettyPicture(clf_rdf, features_test, labels_test)
 except NameError:
     pass
