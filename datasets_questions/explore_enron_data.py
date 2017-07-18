@@ -70,3 +70,45 @@ for key in enron_data.keys():
         num_email += 1
 
 print num_salary, num_email
+
+#%%%%
+
+# How many people in the E+F dataset (as it currently exists) have “NaN” for their 
+# total payments? What percentage of people in the dataset as a whole is this?
+
+num_nan_payment = 0
+
+for key in enron_data.keys():
+    
+    if enron_data[key]['total_payments'] == 'NaN':
+        num_nan_payment += 1
+
+percentage_of_total = "{:.0%}".format(float(num_nan_payment)/ len(enron_data))
+
+print "Number of people who have NaN as totoal payment: ", num_nan_payment
+
+print "% of total: ", percentage_of_total
+
+#%%%%
+
+# How many POIs in the E+F dataset have “NaN” for their total payments? 
+# What percentage of POI’s as a whole is this?
+
+num_nan_poi = 0 
+
+for key in enron_data.keys():   
+    if enron_data[key]['total_payments'] == 'NaN' and enron_data[key]["poi"] == 1:
+        num_nan_poi += 1
+
+percentage_of_poi = "{:.0%}".format(float(num_nan_poi)/ poi_num)
+print "% of POI: ", percentage_of_poi
+
+
+
+
+
+
+
+
+
+
