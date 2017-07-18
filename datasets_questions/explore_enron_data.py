@@ -51,3 +51,22 @@ print enron_data["COLWELL WESLEY"]["from_this_person_to_poi"]
 # What’s the value of stock options exercised by Jeffrey K Skilling?
 
 print enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
+
+# Of these three individuals (Lay, Skilling and Fastow), who took home the most money 
+# (largest value of “total_payments” feature)?
+
+print "Skilling: ", enron_data["SKILLING JEFFREY K"]['total_payments']
+print "Fastow: ", enron_data["FASTOW ANDREW S"]['total_payments']
+print "Lay: ", enron_data["LAY KENNETH L"]['total_payments']
+
+#%%%%
+num_salary = 0 
+num_email = 0 
+
+for key in enron_data.keys():
+    if enron_data[key]['salary'] != 'NaN':
+        num_salary += 1
+    if enron_data[key]['email_address'] != 'NaN':
+        num_email += 1
+
+print num_salary, num_email
