@@ -95,6 +95,14 @@ try:
     plt.plot( feature_test, reg.predict(feature_test) )
 except NameError:
     pass
+
+# Run linear regression on the test set including the outlier and plot the effect 
+reg.fit(feature_test, target_test)
+
+print reg.coef_, reg.intercept_
+
+plt.plot(feature_train, reg.predict(feature_train), color="b") 
+
 plt.xlabel(features_list[1])
 plt.ylabel(features_list[0])
 plt.legend()
