@@ -36,7 +36,7 @@ test_color = "r"
 ### plots it correctly. Don't forget to change the test_color above from "b" to
 ### "r" to differentiate training points from test points.
 
-#%%%%%
+#%%%%
 from sklearn.linear_model import LinearRegression
 
 reg = LinearRegression()
@@ -46,7 +46,16 @@ print reg.coef_, reg.intercept_
 
 
 
-#%%%%%%
+#%%%%
+# Imagine you were a less savvy machine learner, 
+# and didn’t know to test on a holdout test set. 
+# Instead, you tested on the same data that you used to train, 
+# by comparing the regression predictions to the target values 
+# (i.e. bonuses) in the training data.
+
+reg.score(feature_train, target_train)
+
+#%%%%
 
 
 ### draw the scatterplot, with color-coded training and testing points
