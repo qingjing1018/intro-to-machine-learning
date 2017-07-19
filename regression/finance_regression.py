@@ -59,6 +59,21 @@ reg.score(feature_train, target_train)
 reg.score(feature_test, target_test)
 
 #%%%%
+# Try to use "long_term_incentive" feature to predict the bonus
+
+features_list_1 = ["bonus", "long_term_incentive"]
+data_1 = featureFormat( dictionary, features_list_1, remove_any_zeroes=True)
+target_1, features_1 = targetFeatureSplit( data_1 )
+
+feature_train_1, feature_test_1, target_train_1, target_test_1 = train_test_split(features_1, target_1, test_size=0.5, random_state=42)
+
+reg_1 = LinearRegression()
+reg_1 = reg_1.fit(feature_train_1, target_train_1)
+
+print reg_1.score(feature_test_1, target_test_1)
+
+
+#%%%
 
 
 ### draw the scatterplot, with color-coded training and testing points
