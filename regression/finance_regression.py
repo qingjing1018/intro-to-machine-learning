@@ -55,6 +55,9 @@ print reg.coef_, reg.intercept_
 
 reg.score(feature_train, target_train)
 
+# What’s that score on the testing data?
+reg.score(feature_test, target_test)
+
 #%%%%
 
 
