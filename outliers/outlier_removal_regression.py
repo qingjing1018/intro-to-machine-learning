@@ -82,3 +82,12 @@ if len(cleaned_data) > 0:
 else:
     print "outlierCleaner() is returning an empty list, no refitting to be done"
 
+#%%%%
+# Run linear regression on the cleaned_data
+
+clean_reg = LinearRegression()
+clean_reg = clean_reg.fit(ages, net_worths)
+
+print clean_reg.coef_
+
+
