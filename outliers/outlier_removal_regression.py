@@ -93,3 +93,4 @@ print clean_reg.coef_
 #%%%%
 print clean_reg.score(ages_test, net_worths_test)
 
+
