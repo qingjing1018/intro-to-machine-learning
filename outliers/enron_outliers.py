@@ -55,7 +55,18 @@ matplotlib.pyplot.ylabel("bonus")
 matplotlib.pyplot.show()
 
 
+#%%%%
 
+# Two people made bonuses of at least 5 million dollars, and a salary 
+# of over 1 million dollars.  What are the names associated with those points?
+
+for key in data_dict.keys(): 
+    if data_dict[key]['salary'] > 1e6 and       \
+        data_dict[key]['salary'] != 'NaN' and   \
+        data_dict[key]["bonus"] > 0.51e7 and    \
+        data_dict[key]['bonus'] != 'NaN' : 
+        print key, data_dict[key]['salary'], data_dict[key]["bonus"]
+    
     
     
     
