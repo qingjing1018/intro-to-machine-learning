@@ -25,3 +25,14 @@ matplotlib.pyplot.ylabel("bonus")
 matplotlib.pyplot.show()
 
 #%%
+import numpy as np
+
+# Return the largest salary
+max_salary = np.max(zip(*data)[0])  
+
+# Return the key with the largest salary (outlier)
+for key in data_dict.keys():
+    if data_dict[key]["salary"] == max_salary:
+        print key
+        
+        
