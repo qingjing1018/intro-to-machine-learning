@@ -123,6 +123,21 @@ for key in data_dict.keys():
 print "Max:", exercise_stock_options_max
 print "Min:", exercise_stock_options_min
 
+#%%%%
+salary_min = 1e25
+salary_max = 0
+
+for key in data_dict.keys():
+    if data_dict[key]['salary'] != 'NaN' and \
+        data_dict[key]['salary'] > salary_max:
+        salary_max = data_dict[key]['salary']
+    if data_dict[key]['salary'] < salary_min:
+        salary_min = data_dict[key]['salary']
+        
+        
+print "Max:", salary_max
+print "Min:", salary_min
+
 
 
 
