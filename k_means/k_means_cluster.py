@@ -85,5 +85,32 @@ except NameError:
 
 #%%%
 
+# Add a third feature “total_payments" to features_list
+feature_3 = 'total_payments'
+features_list.append(feature_3)
+
+data = featureFormat(data_dict, features_list )
+poi, finance_features = targetFeatureSplit( data )
+
+kmeans_3 = KMeans(n_clusters = 3).fit(finance_features)
+
+pred_3 = kmeans_3.predict(finance_features)
+
+#%%%
+
+### rename the "name" parameter when you change the number of features
+### so that the figure gets saved to a different file
+try:
+    Draw(pred, finance_features, poi, mark_poi=False, name="clusters_3.pdf", 
+         f1_name=feature_1, f2_name=feature_2)
+except NameError:
+    print "no predictions object named pred found, no clusters to plot"
+
+
+
+
+
+
+
 
 
