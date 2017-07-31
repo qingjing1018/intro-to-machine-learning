@@ -106,9 +106,22 @@ try:
 except NameError:
     print "no predictions object named pred found, no clusters to plot"
 
+#%%%
+# What are the maximum and minimum values taken by the “exercised_stock_options” feature 
 
+exercise_stock_options_min = 1e25
+exercise_stock_options_max = 0
 
-
+for key in data_dict.keys():
+    if data_dict[key]['exercised_stock_options'] != 'NaN' and \
+        data_dict[key]['exercised_stock_options'] > exercise_stock_options_max:
+        exercise_stock_options_max = data_dict[key]['exercised_stock_options']
+    if data_dict[key]['exercised_stock_options'] < exercise_stock_options_min:
+        exercise_stock_options_min = data_dict[key]['exercised_stock_options']
+        
+        
+print "Max:", exercise_stock_options_max
+print "Min:", exercise_stock_options_min
 
 
 
