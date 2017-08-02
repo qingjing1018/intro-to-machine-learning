@@ -139,6 +139,44 @@ print "Max:", salary_max
 print "Min:", salary_min
 
 
+#%%%
 
+# Feature scaling tutorial
 
+from sklearn.preprocessing import MinMaxScaler
 
+weights = numpy.array([[115.], [140.], [175.]])
+scaler = MinMaxScaler()
+rescaled_weight = scaler.fit_transform(weights)
+
+print rescaled_weight
+
+#%%%
+
+# Apply feature scaling to your k-means clustering code from the last lesson, 
+# on the “salary” and “exercised_stock_options” features (use only these two features). 
+# What would be the rescaled value of a "salary" feature that had an original 
+# value of $200,000, and an "exercised_stock_options" feature of $1 million?
+
+# Below over complicated the question. The question didn't mean there is a poi that 
+# satisfies both conditions
+idx = []
+for i in range(len(finance_features)): 
+        if finance_features[i][0] == 200000. and finance_features[i][1] == 1000000.: 
+            idx.append(i)
+            
+print idx           
+
+#%%
+# The question simply asks to return recaled salary and exercised_stock_options
+salaries = numpy.array([[salary_min * 1.0], [200000.], [salary_max * 1.0]])
+rescaled_salaries = scaler.fit_transform(salaries)
+
+exercised_stock_option = numpy.array([[exercise_stock_options_min * 1.0], [1000000.], [exercise_stock_options_max * 1.0]])
+rescaled_exercise_stock_options = scaler.fit_transform(exercised_stock_option)
+
+print rescaled_salaries
+
+print rescaled_exercise_stock_options
+
+#%%%
