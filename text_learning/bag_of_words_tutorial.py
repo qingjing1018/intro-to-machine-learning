@@ -21,5 +21,30 @@ bag_of_words = vectorizer.transform(email_list)
 
 print vectorizer.vocabulary_.get("great") # return the location of the word "great" from the bag of words
 
- 
+#%%
+import nltk
+nltk.download()
+
+#%%
+
+from nltk.corpus import stopwords
+
+sw = stopwords.words("english") 
+
+#%%
+
+from nltk.stem.snowball import SnowballStemmer
+
+stemmer = SnowballStemmer("english")
+
+stemmer.stem("responsiveness")
+
+stemmer.stem("unresponsiveness")
+
+#%% 
+
+# TfIdf
+# Tf - term frequency
+# Idf - inverse document frequency 
+
 
