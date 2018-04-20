@@ -19,7 +19,7 @@ bag_of_words = vectorizer.fit(email_list)
 # Transform
 bag_of_words = vectorizer.transform(email_list)
 
-print vectorizer.vocabulary_.get("great") # return the location of the word "great" from the bag of words
+print(vectorizer.vocabulary_.get("great")) # return the location of the word "great" from the bag of words
 
 #%%
 import nltk
@@ -31,18 +31,27 @@ from nltk.corpus import stopwords
 
 sw = stopwords.words("english") 
 
+print(len(sw))
 #%%
 
 from nltk.stem.snowball import SnowballStemmer
 
 stemmer = SnowballStemmer("english")
 
-stemmer.stem("responsiveness")
+print(stemmer.stem("responsiveness"))
 
-stemmer.stem("unresponsiveness")
+print(stemmer.stem("unresponsiveness"))
 
 #%% 
+# Try lemmatizer
+from nltk.stem import WordNetLemmatizer
+wordnet_lemmatizer = WordNetLemmatizer()
 
+print(wordnet_lemmatizer.lemmatize('communities', pos = 'n'))
+print(wordnet_lemmatizer.lemmatize('responsive', pos = 'v'))
+print(wordnet_lemmatizer.lemmatize('forgetfulness', pos = 'v'))
+
+#%%
 # TfIdf
 # Tf - term frequency
 # Idf - inverse document frequency 
