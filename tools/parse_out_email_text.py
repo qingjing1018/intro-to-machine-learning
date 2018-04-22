@@ -36,7 +36,7 @@ def parseOutText(f):
         word_list = text_string.split()
         stemmer = SnowballStemmer("english")   
         stemmed_list = [stemmer.stem(word) for word in word_list]
-        words = ' '.join(stemmed_list) 
+        words = ' '.join(stemmed_list) # Add space between stemmed words
         
     return words
 
