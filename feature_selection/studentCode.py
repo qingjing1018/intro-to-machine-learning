@@ -7,7 +7,6 @@ Created on Mon Apr 23 22:32:39 2018
 
 import pickle
 from get_data import getData
-import numpy as np
 
 def computeFraction( poi_messages, all_messages ):
     """ given a number messages to/from POI (numerator) 
