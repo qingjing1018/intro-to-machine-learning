@@ -53,12 +53,12 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         ### use str.replace() to remove any instances of the words
         ### ["sara", "shackleton", "chris", "germani"]
         
-        for word in ["sara", "shackleton", "chris", "germani"]:
-            clean_email = email_text.replace(word, '').encode('ascii')
+        for word in ["sara", "shackleton", "chris", "germani", "sshacklensf", "cgermannsf"]:
+            email_text = email_text.replace(word, '').encode('ascii')
             
             # print type(clean_email) 
             ### append the text to word_data
-            word_data.append(clean_email)
+            word_data.append(email_text)
 
             ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
             if name == 'sara': 
